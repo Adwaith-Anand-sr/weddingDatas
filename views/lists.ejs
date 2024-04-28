@@ -6,15 +6,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-<body>
+<body class="w-full min-h-full bg-black">
     <nav class="w-full z-[99] flex items-center fixed h-[10vh] bg-black">
         <form action="/search" class="flex justify-between px-[1.5vw] items-center w-full " id="searchForm">
             <select class="w-[15vw] h-[4vh]" id="sortOption">
                 <option value="name">Name</option>
                 <option value="address">Address</option>
             </select>
-            <input class="h-[4vh] pl-[3vw] w-[55vw] rounded-3xl" type="text" id="searchQuery" placeholder="Search here">
-            <input type="submit" value="Search" class="border-white border rounded-2xl py-[1vh] px-[5vw]"></input>
+            <input class="bg-white text-black h-[4vh] pl-[3vw] w-[55vw] rounded-3xl" type="text" id="searchQuery" placeholder="Search here">
+            <input type="submit" value="Search" class="border-white border text-white rounded-2xl py-[1vh] px-[5vw]"></input>
         </form>
     </nav>
     
@@ -25,16 +25,16 @@
         <h1 class="my-[2.5vh] text-[1.5rem] font-black]">All Datas</h1>
         <% datas.forEach((data,index)=>{ %>
             <div class="w-full h-[8vh] border-b ">
-                <div class="ml-[1vw] w-[8%] h-[40%] text-[2vw] opacity-[0.25]"><%= index+1 %></div>
+                <div class="ml-[1vw] w-[8%] h-[40%] text-white text-[2.5vw] opacity-[0.25]"><%= index+1 %></div>
                 <div class="flex text-[3vw] w-full h-full font-black items-start justify-between px-[5vw]">
                     <div class="name overflow-x-auto h-[2vh] whitespace-nowrap w-[30%] text-green-800"><%= data.name %></div>
-                    <div class="address whitespace-nowrap overflow-x-auto h-[2vh] w-[40%] font-semibold"><%= data.address %></div>
+                    <div class="address text-white whitespace-nowrap overflow-x-auto h-[2vh] w-[40%] font-semibold"><%= data.address %></div>
                     <div class="amount overflow-x-auto h-[2vh] whitespace-nowrap w-[20%] text-right text-red-600"><%= data.amount %></div>
                 </div>
             </div>
         <% }) %>
     </main>
-    <a href="/add"><div class="flex items-center justify-center fixed font-black text-[8vw] h-[6vh] z-[999999] w-[6vh] top-[80vh] left-[80vw] rounded-full border-white border">+</div></a>
+    <a href="/add"><div class="flex text-white items-center justify-center fixed font-bold text-[8vw] h-[6vh] z-[999999] w-[6vh] top-[80vh] left-[80vw] rounded-full border-white border">+</div></a>
 
 
     <script src="/javascripts/script.js"></script>
