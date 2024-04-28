@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <nav class="w-full z-[99] flex items-center fixed h-[10vh] bg-black">
+        <form action="/search" class="flex justify-between px-[1.5vw] items-center w-full " id="searchForm">
+            <select class="w-[15vw] h-[4vh]" id="sortOption">
+                <option value="name">Name</option>
+                <option value="address">Address</option>
+            </select>
+            <input class="h-[4vh] pl-[3vw] w-[55vw] rounded-3xl" type="text" id="searchQuery" placeholder="Search here">
+            <input type="submit" value="Search" class="border-white border rounded-2xl py-[1vh] px-[5vw]"></input>
+        </form>
+    </nav>
+    
+    <div class="hidden text-white z-[9999] overflow-x-hidden overflow-y-auto absolute top-[10vh] w-full h-[80vh]" id="searchResults">
+    </div>
+    
+    <main class="w-full h-screen absolute top-[10vh] bg-black">
+        <h1 class="my-[2.5vh] text-[1.5rem] font-black]">All Datas</h1>
+        <% datas.forEach((data,index)=>{ %>
+            <div class="w-full h-[8vh] border-b ">
+                <div class="ml-[1vw] w-[8%] h-[40%] opacity-[0.3]"><%= index+1 %></div>
+                <div class="flex text-[3vw] w-full h-full font-black items-start justify-between px-[5vw]">
+                    <div class="name overflow-x-auto h-[2vh] whitespace-nowrap w-[30%] text-green-800"><%= data.name %></div>
+                    <div class="address whitespace-nowrap overflow-x-auto h-[2vh] w-[40%] font-semibold"><%= data.address %></div>
+                    <div class="amount overflow-x-auto h-[2vh] whitespace-nowrap w-[20%] text-right text-red-600"><%= data.amount %></div>
+                </div>
+            </div>
+        <% }) %>
+    </main>
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>

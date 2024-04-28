@@ -1,0 +1,8 @@
+.address, .name, .amount {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none; 
+}
+input ,select{
+    outline: none;
+}

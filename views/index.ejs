@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="w-full h-screen bg-zinc-900">
+        <div id="updates" class="h-[10vh] text-[3.5vw] text-yellow-500 flex items-center justify-center w-full text-white" placeholder="updates indicators">
+            <h1>
+                
+                <% if(data.length>0){ %>
+                    * data of "
+                    <%= data[0].newData.name %>
+                    " uploaded successfully.
+                <% } %>
+                 
+            </h1> 
+        </div>
+        <form action="/add" method="post" class="w-full h-full pl-[8vw] pt-[6vh]"> 
+            <div>
+                <h1>Name</h1>
+                <input class="ml-[10vw]  border-white border bg-transparent outline-0 my-[1.5vh] pl-[2vw] py-[1vh] text-[3.5vw] font-black " name="name" type="text" required="required">
+            </div>
+            <div>
+                <h1>Address</h1>
+                <textarea class="ml-[10vw] border-white border bg-transparent outline-0 my-[1.5vh] pl-[2vw] py-[1vh] text-[3.5vw] font-black " style="w-full" name="address" rows="3" cols="30" required="required"></textarea>
+            </div>
+            <div>
+                <h1>Amount</h1>
+                <input class="ml-[10vw] border-white border bg-transparent outline-0 mt-[1.5vh] pl-[2vw] py-[1vh] text-[3.5vw] font-black " name="amount" type="number" required="required">
+            </div>
+            <input type="submit"  class="py-[0.8vh] ml-[30vw] mt-[5vh] px-[5vw] rounded-lg outline-0 border border-black">
+        </form>
+    </main>
+    
+</body>
+</html>
