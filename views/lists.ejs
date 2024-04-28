@@ -20,12 +20,12 @@
     
     <div class="hidden text-white z-[9999] overflow-x-hidden overflow-y-auto absolute top-[10vh] w-full h-[80vh]" id="searchResults">
     </div>
-    
-    <main class="w-full h-screen absolute top-[10vh] bg-black">
+
+    <main class="w-full absolute top-[10vh] bg-black">
         <h1 class="my-[2.5vh] text-[1.5rem] font-black]">All Datas</h1>
         <% datas.forEach((data,index)=>{ %>
             <div class="w-full h-[8vh] border-b ">
-                <div class="ml-[1vw] w-[8%] h-[40%] opacity-[0.3]"><%= index+1 %></div>
+                <div class="ml-[1vw] w-[8%] h-[40%] text-[2vw] opacity-[0.25]"><%= index+1 %></div>
                 <div class="flex text-[3vw] w-full h-full font-black items-start justify-between px-[5vw]">
                     <div class="name overflow-x-auto h-[2vh] whitespace-nowrap w-[30%] text-green-800"><%= data.name %></div>
                     <div class="address whitespace-nowrap overflow-x-auto h-[2vh] w-[40%] font-semibold"><%= data.address %></div>
@@ -34,6 +34,9 @@
             </div>
         <% }) %>
     </main>
+    <a href="/add"><div class="flex items-center justify-center fixed font-black text-[8vw] h-[6vh] z-[999999] w-[6vh] top-[80vh] left-[80vw] rounded-full border-white border">+</div></a>
+
+
     <script src="/javascripts/script.js"></script>
 </body>
 </html>
