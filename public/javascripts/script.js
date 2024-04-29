@@ -56,14 +56,5 @@ document.addEventListener('DOMContentLoaded', () => {
         await performSearch();
     });
 
-    searchQueryInput.addEventListener('input', async () => {
-        await performSearch();
-    });
-
-    sortOptionInput.addEventListener('change', async () => {
-        await performSearch();
-    });
-
-    // Initial search when the page loads
-    performSearch();
+    
 });
